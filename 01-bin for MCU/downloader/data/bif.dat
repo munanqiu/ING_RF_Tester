@@ -1,0 +1,18 @@
+function _OnStartBin(const BatchCounter, BinIndex: Integer): Boolean;
+var
+  X: TBytes;
+begin
+  Result := False;
+  X := GetBinary;
+  OnStartBin(BatchCounter, BinIndex, X, Result);
+  Result := not Result;
+end;
+
+function _OnStartRun(const BatchCounter: Integer): Boolean;
+begin
+  Result := False;
+  OnStartRun(BatchCounter, Result);
+  Result := not Result;
+end;
+
+begin end.
